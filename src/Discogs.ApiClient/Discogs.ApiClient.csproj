@@ -6,13 +6,13 @@
   </PropertyGroup>
   
   <PropertyGroup>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
   </PropertyGroup>
 
   <PropertyGroup>
     <PackageId>Discogs.ApiClient</PackageId>
     <PackageProjectUrl>https://github.com/ilyalatt/Discogs.ApiClient</PackageProjectUrl>
-    <PackageIconUrl>https://www.discogs.com/favicon.ico</PackageIconUrl>
+    <PackageIconUrl>https://i.ibb.co/vBJsq9H/discogs-vinyl-record-mark.png</PackageIconUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Description>Discogs Api Client</Description>

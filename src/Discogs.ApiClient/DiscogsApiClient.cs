@@ -1,7 +1,4 @@
 using System;
-using System.Threading.Tasks;
-using Discogs.ApiClient.ApiModel.Responses;
-using Discogs.ApiClient.Extensions;
 
 namespace Discogs.ApiClient
 {
@@ -9,6 +6,7 @@ namespace Discogs.ApiClient
     {
         public readonly DiscogsApiClientEnvironment Environment;
         public DiscogsDatabaseApiClient Database => new DiscogsDatabaseApiClient(Environment);
+        public DiscogsPaginationApiClient Pagination => new DiscogsPaginationApiClient(Environment);
 
         public DiscogsApiClient(DiscogsApiClientEnvironment environment)
         {
@@ -17,11 +15,5 @@ namespace Discogs.ApiClient
         
         public static DiscogsApiClient Create(DiscogsApiClientEnvironment environment) =>
             new DiscogsApiClient(environment);
-
-        public async Task<T> Next<T>(IPageable<T> pageable)
-        {
-            var url = pageable.Pagination.Urls.Next;
-            return await Environment.Get<T>(url).ConfigureAwait(false);
-        }
     }
 }

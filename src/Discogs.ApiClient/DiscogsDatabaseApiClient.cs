@@ -1,9 +1,9 @@
 using System;
 using System.Threading.Tasks;
-using Discogs.ApiClient.ApiModel.Requests.Database;
-using Discogs.ApiClient.ApiModel.Responses.Database.GetMasterVersions;
-using Discogs.ApiClient.ApiModel.Responses.Database.GetRelease;
-using Discogs.ApiClient.ApiModel.Responses.Database.Search;
+using Discogs.ApiClient.ApiModel.Dto.Requests.Database;
+using Discogs.ApiClient.ApiModel.Dto.Responses.Database.GetMasterVersions;
+using Discogs.ApiClient.ApiModel.Dto.Responses.Database.GetRelease;
+using Discogs.ApiClient.ApiModel.Dto.Responses.Database.Search;
 using Discogs.ApiClient.Extensions;
 using Flurl;
 

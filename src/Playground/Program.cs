@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Discogs.ApiClient;
-using Discogs.ApiClient.ApiModel.Requests.Database;
+using Discogs.ApiClient.ApiModel.Dto.Requests.Database;
 
 namespace Playground
 {

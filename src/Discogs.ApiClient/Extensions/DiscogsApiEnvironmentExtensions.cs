@@ -2,8 +2,8 @@ using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using Discogs.ApiClient.ApiModel.Dto.Responses;
 using Discogs.ApiClient.ApiModel.Exceptions;
-using Discogs.ApiClient.ApiModel.Responses;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 

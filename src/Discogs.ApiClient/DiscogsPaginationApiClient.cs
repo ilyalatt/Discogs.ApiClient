@@ -1,6 +1,6 @@
 using System;
 using System.Threading.Tasks;
-using Discogs.ApiClient.ApiModel.Responses;
+using Discogs.ApiClient.ApiModel.Dto.Responses;
 using Discogs.ApiClient.Extensions;
 
 namespace Discogs.ApiClient

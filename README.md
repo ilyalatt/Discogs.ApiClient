@@ -19,4 +19,4 @@ var releases = searchResults.Releases;
 var artists = searchResults.Artists;
 ```
 
-For complete example check out [Playground](https://github.com/ilyalatt/Discogs.ApiClient/tree/master/Playground/Program.cs).
+For complete example check out [Playground](https://github.com/ilyalatt/Discogs.ApiClient/blob/master/src/Playground/Program.cs).

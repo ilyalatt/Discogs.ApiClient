@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Discogs.ApiClient.ApiModel.Dto.Responses;
+using Discogs.ApiClient.ApiModel.Dto.Responses.Database.Search;
 using Discogs.ApiClient.ApiModel.Exceptions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
@@ -17,7 +18,14 @@ namespace Discogs.ApiClient.Extensions
             {
                 NamingStrategy = new SnakeCaseNamingStrategy()
             };
-            var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = contractResolver };
+            var jsonSerializerSettings = new JsonSerializerSettings
+            {
+                ContractResolver = contractResolver,
+                Converters = new JsonConverter[]
+                {
+                    new SearchResultEntityConverter()
+                }
+            };
             return JsonConvert.DeserializeObject<T>(json, jsonSerializerSettings);
         }
 

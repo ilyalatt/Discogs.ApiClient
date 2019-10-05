@@ -10,9 +10,9 @@ namespace Discogs.ApiClient.ApiModel.Dto.Responses.Database.GetRelease
         public string ResourceUrl { get; }
         public int Id { get; }
 
-        public Artist(string @join, string name, string anv, string tracks, string role, string resourceUrl, int id)
+        public Artist(string join, string name, string anv, string tracks, string role, string resourceUrl, int id)
         {
-            Join = @join;
+            Join = join;
             Name = name;
             Anv = anv;
             Tracks = tracks;

@@ -12,7 +12,7 @@ namespace Discogs.ApiClient.ApiModel.Dto.Requests.Database
             Query = query ?? throw new ArgumentNullException(nameof(query));
         }
 
-        public string Type { get; set; }
+        public DiscogsSearchEntityType Type { get; set; }
         public string Title { get; set; }
         public string ReleaseTitle { get; set; }
         public string Credit { get; set; }

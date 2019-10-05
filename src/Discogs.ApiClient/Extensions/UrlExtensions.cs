@@ -9,11 +9,15 @@ namespace Discogs.ApiClient.Extensions
     {
         public static Url AsUrl(this string str) => new Url(str);
 
+        static readonly SnakeCaseNamingStrategy SnakeCaseNamingStrategy = new SnakeCaseNamingStrategy();
         static string ToSnakeCase(string str) =>
-            new SnakeCaseNamingStrategy().GetPropertyName(str, false);
+            SnakeCaseNamingStrategy.GetPropertyName(str, false);
         
         public static string AppendQueryParams(this Url url, object obj) => obj
             .ToKeyValuePairs()
-            .Aggregate(url, (a, x) => a.SetQueryParam(ToSnakeCase(x.Key), x.Value));
+            .Aggregate(url, (a, x) => a.SetQueryParam(
+                ToSnakeCase(x.Key),
+                x.Value?.GetType().IsEnum ?? false ? ToSnakeCase(x.Value.ToString()) : x.Value
+            ));
     }
 }

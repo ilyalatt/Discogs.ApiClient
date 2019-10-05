@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Discogs.ApiClient;
+using Discogs.ApiClient.ApiModel.Dto;
 using Discogs.ApiClient.ApiModel.Dto.Requests.Database;
 
 namespace Playground
@@ -28,12 +29,13 @@ namespace Playground
             var pagination = client.Pagination;
             var searchResults = await db.Search(new DatabaseSearchParams("Bang Bang")
             {
-                Artist = "Nancy Sinatra"
-            }); 
+                Artist = "Nancy Sinatra",
+                Type = DiscogsSearchEntityType.Release
+            });
             while (true)
             {
                 Console.WriteLine($"Page {searchResults.Pagination.Page}");
-                searchResults.Results.Select(x => x.Title).ToList().ForEach(Console.WriteLine);
+                searchResults.Releases.Select(x => x.Title).ToList().ForEach(Console.WriteLine);
                 Console.WriteLine();
 
                 if (searchResults.Pagination.Urls.Next == null) break;

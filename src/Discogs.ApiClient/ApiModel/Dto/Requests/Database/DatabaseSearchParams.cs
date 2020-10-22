@@ -5,14 +5,16 @@ namespace Discogs.ApiClient.ApiModel.Dto.Requests.Database
     // https://www.discogs.com/developers/#page:database,header:database-search 
     public sealed class DatabaseSearchParams
     {
-        public string Query { get; }
+        public string Query { get; set; }
+
+        public DatabaseSearchParams() { }
 
         public DatabaseSearchParams(string query)
         {
             Query = query ?? throw new ArgumentNullException(nameof(query));
         }
 
-        public DiscogsSearchEntityType Type { get; set; }
+        public DiscogsSearchEntityType? Type { get; set; }
         public string Title { get; set; }
         public string ReleaseTitle { get; set; }
         public string Credit { get; set; }
